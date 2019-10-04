@@ -4,18 +4,23 @@ import { Container } from "./styles";
 
 import api from "../../services/api";
 
-function MainPage() {
+import ButtonComponent from "../../components/ButtonComponent";
+import FormComponent from "../../components/FormComponent";
+
+function LoginPage({ history }) {
   const [email, setEmail] = useState("");
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const response = await api.post("/sessions", {
-      email
-    });
-
-    const { _id } = response.data;
-
-    localStorage.setItem("userId", _id);
+    api
+      .post("/sessions", {
+        email
+      })
+      .then(({ data }) => {
+        const { _id } = data;
+        localStorage.setItem("user_id", _id);
+        history.push("/dashboard");
+      });
   }
 
   return (
@@ -24,7 +29,7 @@ function MainPage() {
         Ofereça <strong>spots</strong> para programadores e encontre{" "}
         <strong> talentos</strong> para sua empresa
       </p>
-      <form onSubmit={handleSubmit}>
+      <FormComponent onSubmit={handleSubmit}>
         <label htmlFor="email">E-MAIL *</label>
         <input
           type="email"
@@ -33,12 +38,12 @@ function MainPage() {
           onChange={event => setEmail(event.target.value)}
           value={email}
         />
-        <button type="submit" className="btn">
+        <ButtonComponent type="submit" className="btn">
           Entrar
-        </button>
-      </form>
+        </ButtonComponent>
+      </FormComponent>
     </Container>
   );
 }
 
-export default MainPage;
+export default LoginPage;
