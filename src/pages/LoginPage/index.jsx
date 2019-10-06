@@ -18,7 +18,7 @@ function LoginPage({ history }) {
       })
       .then(({ data }) => {
         const { _id } = data;
-        localStorage.setItem("user_id", _id);
+        localStorage.setItem("user", _id);
         history.push("/dashboard");
       });
   }

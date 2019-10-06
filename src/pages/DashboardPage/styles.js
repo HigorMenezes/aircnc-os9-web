@@ -1,6 +1,33 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  .notifications {
+    list-style: none;
+    margin-bottom: 1.5rem;
+
+    li {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+
+      button {
+        margin-right: 1rem;
+        border: 0;
+        font-weight: bold;
+        margin-top: 1rem;
+        cursor: pointer;
+        background-color: transparent;
+
+        &.accept {
+          color: #84c870;
+        }
+
+        &.reject {
+          color: #e55e5e;
+        }
+      }
+    }
+  }
+
   .spot-list {
     width: 100%;
     list-style: none;

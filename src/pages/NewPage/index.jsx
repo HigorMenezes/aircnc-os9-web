@@ -22,7 +22,7 @@ function NewPage({ history }) {
   async function handleSubmit(event) {
     event.preventDefault();
     const data = new FormData();
-    const user_id = localStorage.getItem("user_id");
+    const user_id = localStorage.getItem("user");
     data.append("thumbnail", thumbnail);
     data.append("company", company);
     data.append("techs", techs);
