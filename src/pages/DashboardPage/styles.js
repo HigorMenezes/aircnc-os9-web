@@ -43,14 +43,8 @@ export const Container = styled.div`
       header {
         width: 100%;
         height: 12rem;
-
-        img {
-          border-radius: 0.4rem;
-          min-width: 100%;
-          max-width: 100%;
-          min-height: 100%;
-          max-height: 100%;
-        }
+        background-position: center;
+        background-size: cover;
       }
 
       strong {

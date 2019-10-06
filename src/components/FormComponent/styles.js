@@ -45,6 +45,8 @@ export const Container = styled.form`
 
     label.has-thumbnail {
       border: 0;
+      background-position: center;
+      background-size: cover;
 
       img {
         display: none;

@@ -73,7 +73,7 @@ function NewPage({ history }) {
         </label>
         <input
           id="price"
-          placeholder="Quais tecnologias usam"
+          placeholder="Valor cobrado por dia"
           onChange={event => setPrice(event.target.value)}
           value={price}
         />

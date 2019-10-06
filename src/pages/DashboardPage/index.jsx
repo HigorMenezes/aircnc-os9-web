@@ -79,9 +79,9 @@ function DashboardPage() {
       <ul className="spot-list">
         {spots.map(spot => (
           <li key={spot._id}>
-            <header>
-              <img src={spot.thumbnailUrl} alt="thumbnail"></img>
-            </header>
+            <header
+              style={{ backgroundImage: `url(${spot.thumbnailUrl})` }}
+            ></header>
             <strong>{spot.company}</strong>
             <span>{spot.price ? `R$ ${spot.price}/dia` : "GRATUITO"}</span>
           </li>
